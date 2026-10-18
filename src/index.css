@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
+@keyframes marquee {
+
+    /*
+        [ 정의 ]
+        @keyframes 애니메이션명
+        from : 애니메이션 시작 상태
+        to : 애니메이션 종료 상태
+
+        transform : 요소의 위치를 이동, 확대, 회전 등을 변경하는 css
+        이동 : translateX(-20px) => 왼쪽으로 20px 이동
+        확대 : scale(1.1) => 1.1배 확대
+        회전 : rotate(10deg)
+
+        translateX(-100%) : 이동하는 요소의 너비를 기준으로 100%를 의미
+
+
+        [ 적용법 ]
+        animation: marquee 5s linear forwards;
+        => animate-[marquee_5s_linear_2s_forwards]
+        => animate-[이름, 실행_시간, 변화 방식, delay, 종류 후 상태]
+
+        - 3번째 요소
+        linear : 처음부터 끝까지 일정한 속도
+        ease : 처음, 끝은 느리고, 중간은 빠르게
+        ease-in : 처음은 느리고 점점 빠르게
+        ease-out : 처음은 빠르고 점점 느리게
+        ease-in-out : 처음, 끝은 느리고, 중간은 빠르게(ease와 속도 다름)
+
+        - 4번째 요소
+        forwards : 마지막 상태 유지
+        none : 마지막 상태 유지 x
+        backwards : 애니메이션 종료 후 시작 전 상태 적용
+        both : forwards + backwards
+    */
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
